@@ -12,7 +12,8 @@ if (Meteor.isClient) {
       var name = event.target.name.value;
 
       Tasks.insert({
-        name: name, createdAt: new Date()
+        name: name, createdAt: new Date(),
+        userID: Meteor.userId()
       });
 
       event.target.name.value = '';
